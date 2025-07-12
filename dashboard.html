@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Available Batches</h2>
+  <div id="batches"></div>
+
+  <script>
+    const batches = [
+      {
+        name: "NEET 2025",
+        price: "Free",
+        image: "assets/images/neet.jpg",
+        link: "subject.html"
+      },
+      {
+        name: "JEE 2025",
+        price: "₹999",
+        image: "assets/images/jee.jpg",
+        link: "subject.html"
+      }
+    ];
+
+    const container = document.getElementById("batches");
+    batches.forEach(batch => {
+      container.innerHTML += `
+        <div class="card">
+          <img src="${batch.image}" alt="${batch.name}">
+          <h3>${batch.name}</h3>
+          <p>Price: ${batch.price}</p>
+          <a href="${batch.link}">View Subjects</a>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
